@@ -1,0 +1,11 @@
+<input type="text" name="" value="" ng-model="borough">
+<button type="submit" name="button" ng-click="searchByBorough(borough)"> Search </button>
+
+<div class="restaurantItem" ng-repeat="filteredRestaurant in filteredRestaurants">
+  <h3 class="restaurantName">{{filteredRestaurant.name}}</h3>
+  <p class="restaurantCuisine"><a href="#" ng-click="getByCuisine(filteredRestaurant.cuisine)">Cuisine: {{filteredRestaurant.cuisine}}</a></p>
+  <p class="restaurantLocation">{{filteredRestaurant.borough}} {{filteredRestaurant.address.building }} {{filteredRestaurant.address.street}}</p>
+</div>
+
+<button class="pagination" type="button" name="button" ng-click="pageBorough(1, filteredRestaurants[0].borough)">1</button>
+<button class="pagination" type="button" name="button" ng-click="pageBorough(2, filteredRestaurants[0].borough)">2</button>
